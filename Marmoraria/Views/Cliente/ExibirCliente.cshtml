@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Clientes";
+}
+<h1 class="text-center">Lista de Clientes</h1>
+
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+
+
+<div class="">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <button type="button" class="btn btn-dark " data-toggle="modal" data-target="#myModal">Cadastrar Cliente</button>
+
+        <div class="bg-light justify-content-around">
+        <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+        </form>
+        </div>
+
+    </nav>
+</div>
+
+<hr>
+
+<table class="table table-striped table-hover table-responsive">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Pedidos</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <th scope="row">1</th>
+            <td>João</td>
+            <td>(32) 99976-0515</td>
+            <td>joao@joao.com</td>
+            <td>Rua teste</td>
+            <td><a class="text-dark" asp-area="" asp-controller="Pedido" asp-action="ExibirPedido">7</a></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Marcos</td>
+            <td>(32) 99876-0613</td>
+            <td>marcos@marcos.com</td>
+            <td>Rua teste</td>
+            <td><a class="text-dark" asp-area="" asp-controller="Pedido" asp-action="ExibirPedido">3</a></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Maria</td>
+            <td>(33) 3249-0901</td>
+            <td>maria@maria.com</td>
+            <td>Rua teste</td>
+            <td><a class="text-dark btnDetails" asp-area="" asp-controller="Pedido" asp-action="ExibirPedido">5</a></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"l">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title text-" id="exampleModalLabel">Novo Cliente</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nome:</label>
+                        <input type="email" class="form-control" id="nome" aria-describedby="nome" placeholder="João Silva">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email:</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="joão@joão.com.br">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Telefone:</label>
+                        <input type="tel" class="form-control" id="telefone" aria-describedby="tel" placeholder="(32) 99999-9999">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            WhatsApp
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Endereço:</label>
+                        <textarea class="form-control" id="message-text" placeholder="Rua California..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".close").click(function () {
+            $("#myModal").modal("hide");
+        });
+    });
+</script>
